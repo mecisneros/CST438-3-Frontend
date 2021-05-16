@@ -107,6 +107,36 @@
             </div>
             <br/><br/>
         </div>
+
+        <div class="">
+            <h3 th:text="'For a fabulous weekend getaway for 2 to ' + ${cityInfo.getName()} + ' signup here'"></h3>
+            <br/>
+            <div class="promotion">
+                <form th:action="@{/cities/reservation}" method="post">
+                    <div>
+                        <p> Email <input type="email" th:name="email"/></p>
+                        <p>Package
+                            <!--                            <ul>-->
+                        <div th:each="radioValue: ${levels}">
+                            <input type="radio"
+                                   th:name="level"
+                                   th:value="${radioValue}"
+                                   th:id = ${radioValue}/>
+                            <label
+                                    th:for="${radioValue}"
+                                    th:text="${radioValue}"></label>
+                            <br/>
+                        </div>
+                        <!--                            </ul>-->
+                        </p>
+                        <p class="hidden">City Name<input class="hidden" th:value="${cityInfo.getName()}" th:name="city" id="city"/></p>
+                        <p><input type="submit" value="Submit"/></p>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
     </div>
 </body>
 </html>
