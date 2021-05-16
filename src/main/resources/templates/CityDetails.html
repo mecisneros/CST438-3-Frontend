@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+
+<style>
+
+    div {
+        color: white;
+        font-family: Tahoma, Verdana, Segoe, sans-serif;
+        padding: 10px;
+    }
+    h1{
+        display: flex;
+        margin-left: 10px;
+    }
+    .content {
+        background-color:#2E4272;
+        display:flex;
+    }
+    .attributes {
+        background-color:#4F628E;
+        width: 20%;
+    }
+    .values {
+        background-color:#7887AB;
+        flex-grow: 1;
+    }
+    .container{
+        background-color: #2E4272;
+        width: 60%;
+        padding-top: 60px;
+        margin-left: 20%;
+    }
+    input[type = email] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    input[type = button] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    .promotion {
+        background-color:#2E4272;
+        display:flex;
+    }
+    .hidden {
+        display: None;
+    }
+
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <title>City Details</title>
+</head>
+<body>
+    <div class="container">
+
+        <h1 id = "title">City</h1>
+
+        <div class="content" >
+            <div class="attributes">
+                <label>ID</label>
+                <br/><br/>
+                <label>Name</label>
+                <br/><br/>
+                <label>Country Code</label>
+                <br/><br/>
+                <label>Country Name</label>
+                <br/><br/>
+                <label>District</label>
+                <br/><br/>
+                <label>Population</label>
+                <br/><br/>
+                <label>Local Weather</label>
+                <br/><br/>
+                <label>Local Time</label>
+                <br/><br/>
+            </div>
+
+            <div class="values">
+                <label th:text="${cityInfo.getId()}"></label>
+                <br/><br/>
+                <label th:text="${cityInfo.getName()}"></label>
+                <br/><br/>
+                <label th:text="${cityInfo.getCountryCode()}"></label>
+                <br/><br/>
+                <label th:text="${cityInfo.getCountryName()}"></label>
+                <br/><br/>
+                <label th:text="${cityInfo.getDistrict()}"></label>
+                <br/><br/>
+                <label th:text="${cityInfo.getPopulation()}"></label>
+                <br/><br/>
+                <label th:text="${cityInfo.getLocalTemperature()}"></label>
+                <br/><br/>
+                <label th:text="${cityInfo.getLocalTime()}"></label>
+                <br/><br/>
+            </div>
+            <br/><br/>
+        </div>
+    </div>
+</body>
+</html>
